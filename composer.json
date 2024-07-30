@@ -1,0 +1,34 @@
+{
+    "name": "nikba/laravel-bulksms",
+    "description": "A Laravel package to send SMS using BulkSMS API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolai",
+            "email": "your-email@example.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^10.0|^11.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nikba\\BulkSms\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nikba\\BulkSms\\BulkSmsServiceProvider"
+            ],
+            "aliases": {
+                "BulkSms": "Nikba\\BulkSms\\Facades\\BulkSms"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
