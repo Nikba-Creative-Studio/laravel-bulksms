@@ -23,7 +23,40 @@ class BulkSmsClient
                 'body' => $message,
             ],
             'headers' => [
-                'Authorization' => 'Bearer ' . config('bulksms.api_key'),
+                'Authorization' => 'Basic ' . config('bulksms.api_key'),
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
+    public function getProfile()
+    {
+        $response = $this->client->get('profile', [
+            'headers' => [
+                'Authorization' => 'Basic ' . config('bulksms.api_key'),
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
+    public function getMessages()
+    {
+        $response = $this->client->get('messages', [
+            'headers' => [
+                'Authorization' => 'Basic ' . config('bulksms.api_key'),
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
+    public function getMessage($id)
+    {
+        $response = $this->client->get('messages/' . $id, [
+            'headers' => [
+                'Authorization' => 'Basic ' . config('bulksms.api_key'),
             ],
         ]);
 

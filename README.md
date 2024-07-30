@@ -22,7 +22,7 @@ BULKSMS_API_KEY=your_api_key_here
 Use the BulkSms facade to send messages:
 
 ```php
-use BulkSms;
+use Nikba\BulkSms\Facades\BulkSms;
 
 BulkSms::sendMessage('1234567890', 'Hello World');
 ```
