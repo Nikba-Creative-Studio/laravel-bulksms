@@ -1,6 +1,7 @@
 {
     "name": "nikba/laravel-bulksms",
-    "description": "A Laravel package to send SMS using BulkSMS API",
+    "description": "A modern Laravel package to send and manage SMS messages using the BulkSMS JSON REST API.",
+    "keywords": ["laravel", "bulksms", "sms", "notification", "api", "messaging"],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,14 +11,31 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/support": "^10.0|^11.0",
-        "guzzlehttp/guzzle": "^7.0"
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.0|^11.0",
+        "larastan/larastan": "^2.9|^3.0",
+        "laravel/pint": "^1.13"
     },
     "autoload": {
         "psr-4": {
             "Nikba\\BulkSms\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nikba\\BulkSms\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
     },
     "extra": {
         "laravel": {
@@ -29,6 +47,9 @@
             }
         }
     },
-    "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
