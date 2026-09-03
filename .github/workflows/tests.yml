@@ -37,6 +37,11 @@ jobs:
 
       - name: Install dependencies
         run: |
+          # Laravel 10.x and 11.x are past end-of-life and every release carries
+          # a security advisory, which Composer blocks during resolution. This is
+          # a compatibility matrix, so allow them in CI only. Consumers keep full
+          # advisory protection in their own applications.
+          composer config --no-plugins policy.advisories.block false || true
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --prefer-dist --no-interaction
 
