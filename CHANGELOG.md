@@ -2,6 +2,16 @@
 
 All notable changes to `nikba/laravel-bulksms` will be documented in this file.
 
+## [2.1.0] - 2026-09-04
+
+### Added
+- Support for **Laravel 13** (`illuminate/*` `^13.0`).
+
+### Changed
+- CI matrix now covers Laravel 10–13. Laravel 13 is tested on PHP 8.3 and 8.4
+  (it requires PHP 8.3+); the `orchestra/testbench` `^11.0` line is used for it.
+- Widened the `phpunit/phpunit` dev constraint to `^10.5|^11.0|^12.0`.
+
 ## [2.0.0] - 2026-09-03
 
 ### Added
