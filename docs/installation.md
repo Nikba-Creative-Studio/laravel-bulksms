@@ -6,8 +6,8 @@
 
 | Requirement | Version |
 |-------------|---------|
-| PHP         | 8.2+    |
-| Laravel     | 10, 11 or 12 |
+| PHP         | 8.2+ (8.3+ for Laravel 13) |
+| Laravel     | 10, 11, 12 or 13 |
 
 ## Install via Composer
 

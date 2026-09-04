@@ -43,5 +43,5 @@ composer analyse   # PHPStan (level 6)
 composer format    # Laravel Pint
 ```
 
-The suite runs against a matrix of PHP 8.2–8.4 and Laravel 10–12 in CI
+The suite runs against a matrix of PHP 8.2–8.4 and Laravel 10–13 in CI
 (`.github/workflows/tests.yml`).
